@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="f3zbsh6r">
+  <resources>
+    <component id="tb4x0" name="GamePlayPanel.xml" path="/" exported="true"/>
+    <image id="jn2f1" name="GVG_GameplayArea.png" path="/Images/"/>
+  </resources>
+  <publish name="" path="../Unity/Assets/Bundles/FUI/GamePlay" packageCount="2" genCode="true"/>
+</packageDescription>

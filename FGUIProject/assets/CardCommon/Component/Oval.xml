@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="512,512" pivot="0.5,0.5">
+  <displayList>
+    <loader id="n0_g9qx" name="background" xy="0,0" pivot="0.5,0.5" size="512,512" url="ui://fmn4js1pg9qxk" align="center" vAlign="middle" fill="scale" shrinkOnly="true">
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </loader>
+    <loader id="n1_g9qx" name="oval" xy="61,61" pivot="0.5,0.5" size="390,390" url="ui://fmn4js1pg9qx17" fill="scale" shrinkOnly="true">
+      <relation target="n0_g9qx" sidePair="center-center%,middle-middle%"/>
+      <relation target="" sidePair="width-width%,height-height%"/>
+    </loader>
+  </displayList>
+</component>

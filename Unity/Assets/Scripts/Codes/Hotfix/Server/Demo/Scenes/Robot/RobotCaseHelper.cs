@@ -1,3 +1,4 @@
+using ET.Client;
 using System;
 using System.Collections.Generic;
 
@@ -65,7 +66,10 @@ namespace ET.Server
             try
             {
                 clientScene = await Client.SceneFactory.CreateClientScene(zone, name);
-                await Client.LoginHelper.Login(clientScene, zone.ToString(), zone.ToString());
+                var loginCom = self.AddComponent<LoginComponent>();
+                loginCom.Account = zone.ToString();
+                loginCom.Password = zone.ToString();
+                await loginCom.Login(clientScene);
                 await Client.EnterMapHelper.EnterMapAsync(clientScene);
                 Log.Debug($"create robot ok: {zone}");
                 return clientScene;
@@ -85,7 +89,10 @@ namespace ET.Server
             try
             {
                 clientScene = await Client.SceneFactory.CreateClientScene(zone, $"Robot_{zone}");
-                await Client.LoginHelper.Login(clientScene, zone.ToString(), zone.ToString());
+                var loginCom = self.AddComponent<LoginComponent>();
+                loginCom.Account = zone.ToString();
+                loginCom.Password = zone.ToString();
+                await loginCom.Login(clientScene);
                 await Client.EnterMapHelper.EnterMapAsync(clientScene);
                 Log.Debug($"create robot ok: {zone}");
                 return clientScene;

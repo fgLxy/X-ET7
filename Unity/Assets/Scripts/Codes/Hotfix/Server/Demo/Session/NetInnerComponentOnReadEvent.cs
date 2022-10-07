@@ -5,6 +5,7 @@ namespace ET.Server
     [Event(SceneType.Process)]
     public class NetInnerComponentOnReadEvent: AEvent<NetInnerComponentOnRead>
     {
+
         protected override async ETTask Run(Scene scene, NetInnerComponentOnRead args)
         {
             ushort opcode = 0;

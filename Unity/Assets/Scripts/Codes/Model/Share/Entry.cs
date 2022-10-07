@@ -2,15 +2,15 @@
 {
     namespace EventType
     {
-        public struct EntryEvent1
+        public struct InitShareEvent
         {
         }   
         
-        public struct EntryEvent2
+        public struct InitServerEvent
         {
         } 
         
-        public struct EntryEvent3
+        public struct InitClientEvent
         {
         } 
     }
@@ -24,18 +24,25 @@
         
         private static async ETTask StartAsync()
         {
+            Logger.Instance.Info("Game Entry");
             WinPeriod.Init();
-            
+            Logger.Instance.Info("Game Entry1");
             MongoRegister.Init();
+            Logger.Instance.Info("Game Entry2");
             ProtobufRegister.Init();
-            
+            Logger.Instance.Info("Game Entry3");
             Game.AddSingleton<NetServices>();
+            Logger.Instance.Info("Game Entry4");
             Game.AddSingleton<Root>();
+            Logger.Instance.Info("Game Entry5");
             await Game.AddSingleton<ConfigComponent>().LoadAsync();
-
-            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent1());
-            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent2());
-            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.EntryEvent3());
+            Logger.Instance.Info("Game Entry6");
+            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.InitShareEvent());
+            Logger.Instance.Info("Game Entry7");
+            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.InitServerEvent());
+            Logger.Instance.Info("Game Entry8");
+            await EventSystem.Instance.PublishAsync(Root.Instance.Scene, new EventType.InitClientEvent());
+            Logger.Instance.Info("Game Entry9");
         }
     }
 }

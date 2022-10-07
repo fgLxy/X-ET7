@@ -13,12 +13,14 @@ namespace ET
 		
 		private async ETTask Awake()
 		{
+			UnityEngine.Debug.Log("Init Awake");
 			Instance = this;
 			
 			DontDestroyOnLoad(gameObject);
 			
 			AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
 			{
+				UnityEngine.Debug.LogError(e);
 				Log.Error(e.ExceptionObject.ToString());
 			};
 				
@@ -40,7 +42,9 @@ namespace ET
 			
 			ETTask.ExceptionHandler += Log.Error;
 
-			await Game.AddSingleton<MonoResComponent>().InitAsync();
+			await Game.AddSingleton<ResComponent>().InitAsync();
+
+
 			Game.AddSingleton<CodeLoader>().Start();
 		}
 

@@ -8,9 +8,9 @@
   "jpegQuality": 80,
   "compressPNG": false,
   "codeGeneration": {
-    "allowGenCode": false,
-    "codePath": "",
-    "classNamePrefix": "FUI_",
+    "allowGenCode": true,
+    "codePath": "../Unity/Assets/Scripts/Codes/",
+    "classNamePrefix": "FGUI",
     "memberNamePrefix": "",
     "packageName": "ET",
     "ignoreNoname": true,

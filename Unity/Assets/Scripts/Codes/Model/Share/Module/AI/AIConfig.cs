@@ -17,7 +17,7 @@ namespace ET
 			return this.AIConfigs[aiConfigId];
 		}
 
-		partial void PostResolve()
+		public override void AfterEndInit()
 		{
 			foreach (var kv in this.GetAll())
 			{
@@ -27,7 +27,7 @@ namespace ET
 					aiNodeConfig = new SortedDictionary<int, AIConfig>();
 					this.AIConfigs.Add(kv.Value.AIConfigId, aiNodeConfig);
 				}
-				
+
 				aiNodeConfig.Add(kv.Key, kv.Value);
 			}
 		}

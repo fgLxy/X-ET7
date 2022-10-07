@@ -2,6 +2,7 @@
 <packageDescription id="ti3ka994">
   <resources>
     <component id="t52l0" name="LobbyPanel.xml" path="/" exported="true"/>
+    <image id="g9qx1" name="background.jpg" path="/Images/"/>
   </resources>
-  <publish name="" path="../Unity/Assets/Bundles/FUI/Lobby" packageCount="2"/>
+  <publish name="" path="../Unity/Assets/Bundles/FUI/Lobby" packageCount="2" genCode="true"/>
 </packageDescription>

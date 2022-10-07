@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="fmn4js1p">
+  <resources>
+    <image id="g9qx0" name="card_back_brass.png" path="/Images/cards back/"/>
+    <image id="g9qx1" name="boss icon.png" path="/Images/icons/"/>
+    <image id="g9qx2" name="bow.png" path="/Images/icons/"/>
+    <image id="g9qx3" name="chaos.png" path="/Images/icons/"/>
+    <image id="g9qx4" name="coin pouch.png" path="/Images/icons/"/>
+    <image id="g9qx5" name="crossed swords.png" path="/Images/icons/"/>
+    <image id="g9qx6" name="crown.png" path="/Images/icons/"/>
+    <image id="g9qx7" name="diamond1.png" path="/Images/icons/"/>
+    <image id="g9qx8" name="electricity.png" path="/Images/icons/"/>
+    <image id="g9qx9" name="fire.png" path="/Images/icons/"/>
+    <image id="g9qxa" name="heart.png" path="/Images/icons/"/>
+    <image id="g9qxb" name="ice.png" path="/Images/icons/"/>
+    <image id="g9qxc" name="leaf.png" path="/Images/icons/"/>
+    <image id="g9qxd" name="necrmancy.png" path="/Images/icons/"/>
+    <image id="g9qxe" name="book.png" path="/Images/icons/"/>
+    <image id="g9qxf" name="poison.png" path="/Images/icons/"/>
+    <image id="g9qxg" name="shield.png" path="/Images/icons/"/>
+    <image id="g9qxh" name="water.png" path="/Images/icons/"/>
+    <image id="g9qxi" name="wind.png" path="/Images/icons/"/>
+    <image id="g9qxj" name="oval_frame_01.png" path="/Images/oval frames/"/>
+    <image id="g9qxk" name="oval_frame_01_brass.png" path="/Images/oval frames/"/>
+    <image id="g9qxl" name="oval_frame_01_gold.png" path="/Images/oval frames/"/>
+    <image id="g9qxm" name="oval_frame_01_legendary.png" path="/Images/oval frames/"/>
+    <image id="g9qxn" name="oval_frame_02.png" path="/Images/oval frames/"/>
+    <image id="g9qxo" name="oval_frame_02_brass.png" path="/Images/oval frames/"/>
+    <image id="g9qxp" name="oval_frame_02_gold.png" path="/Images/oval frames/"/>
+    <image id="g9qxq" name="oval_frame_02_legendary.png" path="/Images/oval frames/"/>
+    <image id="g9qxr" name="oval_frame_03.png" path="/Images/oval frames/"/>
+    <image id="g9qxs" name="oval_frame_03_brass.png" path="/Images/oval frames/"/>
+    <image id="g9qxt" name="potion.png" path="/Images/icons/"/>
+    <image id="g9qxu" name="armor.png" path="/Images/icons/"/>
+    <image id="g9qxv" name="ring.png" path="/Images/handpaint icons assets/"/>
+    <image id="g9qxw" name="coin.png" path="/Images/handpaint icons assets/"/>
+    <image id="g9qxx" name="card_back_gold.png" path="/Images/cards back/"/>
+    <image id="g9qxy" name="card_back_legendary.png" path="/Images/cards back/"/>
+    <image id="g9qxz" name="card_back_silver_clean.png" path="/Images/cards back/"/>
+    <image id="g9qx10" name="card_back_silver_rusty.png" path="/Images/cards back/"/>
+    <image id="g9qx11" name="card_front_brass.png" path="/Images/cards front/"/>
+    <image id="g9qx12" name="card_front_gold.png" path="/Images/cards front/"/>
+    <image id="g9qx13" name="card_front_legendary.png" path="/Images/cards front/"/>
+    <image id="g9qx14" name="card_front_silver_clean.png" path="/Images/cards front/"/>
+    <image id="g9qx15" name="card_front_silver_rusty.png" path="/Images/cards front/"/>
+    <image id="g9qx16" name="aquablue.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx17" name="black.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx18" name="blue.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx19" name="bright green.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1a" name="chaos.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1b" name="gold.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1c" name="green.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1d" name="orange.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1e" name="red.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1f" name="shadow.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1g" name="violet.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1h" name="white.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1i" name="yellow.png" path="/Images/gems/oval shaped/"/>
+    <image id="g9qx1j" name="epic.png" path="/Images/gems/rarity/"/>
+    <image id="g9qx1k" name="legendary.png" path="/Images/gems/rarity/"/>
+    <image id="g9qx1l" name="normal.png" path="/Images/gems/rarity/"/>
+    <image id="g9qx1m" name="rare.png" path="/Images/gems/rarity/"/>
+    <image id="g9qx1n" name="shadow.png" path="/Images/gems/rarity/"/>
+    <image id="g9qx1o" name="cauldron.png" path="/Images/handpaint icons assets/"/>
+    <image id="g9qx1p" name="coin pouch.png" path="/Images/handpaint icons assets/"/>
+    <image id="g9qx1q" name="oval_frame_03_gold.png" path="/Images/oval frames/"/>
+    <image id="g9qx1r" name="oval_frame_03_legendary.png" path="/Images/oval frames/"/>
+    <component id="g9qx1s" name="Card.xml" path="/Component/" exported="true"/>
+    <component id="g9qx1t" name="Oval.xml" path="/Component/"/>
+    <image id="tb4x1u" name="summary_background.png" path="/Images/"/>
+    <image id="tb4x1v" name="title_name_background.png" path="/Images/"/>
+    <image id="scss1x" name="background.png" path="/"/>
+    <image id="jn2f1y" name="GenFX_HeroFrame_Generic.png" path="/Images/"/>
+  </resources>
+  <publish name="" path="../Unity/Assets/Bundles/FUI/CardCommon" packageCount="2" genCode="true"/>
+</packageDescription>

@@ -27,22 +27,25 @@ namespace ET
 
 	}
 
-	[ResponseType(nameof(M2C_TestResponse))]
-	[Message(OuterMessage.C2M_TestRequest)]
+	[ResponseType(nameof(R2C_Login))]
+	[Message(OuterMessage.C2R_Login)]
 	[ProtoContract]
-	public partial class C2M_TestRequest: ProtoObject, IActorLocationRequest
+	public partial class C2R_Login: ProtoObject, IRequest
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
 		[ProtoMember(2)]
-		public string request { get; set; }
+		public string Account { get; set; }
+
+		[ProtoMember(3)]
+		public string Password { get; set; }
 
 	}
 
-	[Message(OuterMessage.M2C_TestResponse)]
+	[Message(OuterMessage.R2C_Login)]
 	[ProtoContract]
-	public partial class M2C_TestResponse: ProtoObject, IActorLocationResponse
+	public partial class R2C_Login: ProtoObject, IResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
@@ -54,26 +57,35 @@ namespace ET
 		public string Message { get; set; }
 
 		[ProtoMember(4)]
-		public string response { get; set; }
+		public string Address { get; set; }
+
+		[ProtoMember(5)]
+		public long Key { get; set; }
+
+		[ProtoMember(6)]
+		public long GateId { get; set; }
 
 	}
 
-	[ResponseType(nameof(Actor_TransferResponse))]
-	[Message(OuterMessage.Actor_TransferRequest)]
+	[ResponseType(nameof(G2C_LoginGate))]
+	[Message(OuterMessage.C2G_LoginGate)]
 	[ProtoContract]
-	public partial class Actor_TransferRequest: ProtoObject, IActorLocationRequest
+	public partial class C2G_LoginGate: ProtoObject, IRequest
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
 		[ProtoMember(2)]
-		public int MapIndex { get; set; }
+		public long Key { get; set; }
+
+		[ProtoMember(3)]
+		public long GateId { get; set; }
 
 	}
 
-	[Message(OuterMessage.Actor_TransferResponse)]
+	[Message(OuterMessage.G2C_LoginGate)]
 	[ProtoContract]
-	public partial class Actor_TransferResponse: ProtoObject, IActorLocationResponse
+	public partial class G2C_LoginGate: ProtoObject, IResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
@@ -84,21 +96,27 @@ namespace ET
 		[ProtoMember(3)]
 		public string Message { get; set; }
 
+		[ProtoMember(4)]
+		public long PlayerId { get; set; }
+
 	}
 
-	[ResponseType(nameof(G2C_EnterMap))]
-	[Message(OuterMessage.C2G_EnterMap)]
+	[ResponseType(nameof(G2C_EnterGamePlay))]
+	[Message(OuterMessage.C2G_EnterGamePlay)]
 	[ProtoContract]
-	public partial class C2G_EnterMap: ProtoObject, IRequest
+	public partial class C2G_EnterGamePlay: ProtoObject, IRequest
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
 
+		[ProtoMember(2)]
+		public uint Mode { get; set; }
+
 	}
 
-	[Message(OuterMessage.G2C_EnterMap)]
+	[Message(OuterMessage.G2C_EnterGamePlay)]
 	[ProtoContract]
-	public partial class G2C_EnterMap: ProtoObject, IResponse
+	public partial class G2C_EnterGamePlay: ProtoObject, IResponse
 	{
 		[ProtoMember(1)]
 		public int RpcId { get; set; }
@@ -111,8 +129,29 @@ namespace ET
 
 // 自己unitId
 		[ProtoMember(4)]
-		public long MyId { get; set; }
+		public long PlayerId { get; set; }
 
+		[ProtoMember(5)]
+		public long RoomId { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_PlayerJoinRoomNotify)]
+	[ProtoContract]
+	public partial class G2C_PlayerJoinRoomNotify: ProtoObject, IActorMessage
+	{
+		[ProtoMember(1)]
+		public long PlayerId { get; set; }
+
+		[ProtoMember(2)]
+		public long UnitId { get; set; }
+
+	}
+
+	[Message(OuterMessage.G2C_GameStartNotify)]
+	[ProtoContract]
+	public partial class G2C_GameStartNotify: ProtoObject, IActorMessage
+	{
 	}
 
 	[Message(OuterMessage.MoveInfo)]
@@ -318,80 +357,6 @@ namespace ET
 
 	}
 
-	[ResponseType(nameof(R2C_Login))]
-	[Message(OuterMessage.C2R_Login)]
-	[ProtoContract]
-	public partial class C2R_Login: ProtoObject, IRequest
-	{
-		[ProtoMember(1)]
-		public int RpcId { get; set; }
-
-		[ProtoMember(2)]
-		public string Account { get; set; }
-
-		[ProtoMember(3)]
-		public string Password { get; set; }
-
-	}
-
-	[Message(OuterMessage.R2C_Login)]
-	[ProtoContract]
-	public partial class R2C_Login: ProtoObject, IResponse
-	{
-		[ProtoMember(1)]
-		public int RpcId { get; set; }
-
-		[ProtoMember(2)]
-		public int Error { get; set; }
-
-		[ProtoMember(3)]
-		public string Message { get; set; }
-
-		[ProtoMember(4)]
-		public string Address { get; set; }
-
-		[ProtoMember(5)]
-		public long Key { get; set; }
-
-		[ProtoMember(6)]
-		public long GateId { get; set; }
-
-	}
-
-	[ResponseType(nameof(G2C_LoginGate))]
-	[Message(OuterMessage.C2G_LoginGate)]
-	[ProtoContract]
-	public partial class C2G_LoginGate: ProtoObject, IRequest
-	{
-		[ProtoMember(1)]
-		public int RpcId { get; set; }
-
-		[ProtoMember(2)]
-		public long Key { get; set; }
-
-		[ProtoMember(3)]
-		public long GateId { get; set; }
-
-	}
-
-	[Message(OuterMessage.G2C_LoginGate)]
-	[ProtoContract]
-	public partial class G2C_LoginGate: ProtoObject, IResponse
-	{
-		[ProtoMember(1)]
-		public int RpcId { get; set; }
-
-		[ProtoMember(2)]
-		public int Error { get; set; }
-
-		[ProtoMember(3)]
-		public string Message { get; set; }
-
-		[ProtoMember(4)]
-		public long PlayerId { get; set; }
-
-	}
-
 	[Message(OuterMessage.G2C_TestHotfixMessage)]
 	[ProtoContract]
 	public partial class G2C_TestHotfixMessage: ProtoObject, IMessage
@@ -486,37 +451,35 @@ namespace ET
 	{
 		 public const ushort HttpGetRouterResponse = 10002;
 		 public const ushort RouterSync = 10003;
-		 public const ushort C2M_TestRequest = 10004;
-		 public const ushort M2C_TestResponse = 10005;
-		 public const ushort Actor_TransferRequest = 10006;
-		 public const ushort Actor_TransferResponse = 10007;
-		 public const ushort C2G_EnterMap = 10008;
-		 public const ushort G2C_EnterMap = 10009;
-		 public const ushort MoveInfo = 10010;
-		 public const ushort UnitInfo = 10011;
-		 public const ushort M2C_CreateUnits = 10012;
-		 public const ushort M2C_CreateMyUnit = 10013;
-		 public const ushort M2C_StartSceneChange = 10014;
-		 public const ushort M2C_RemoveUnits = 10015;
-		 public const ushort C2M_PathfindingResult = 10016;
-		 public const ushort C2M_Stop = 10017;
-		 public const ushort M2C_PathfindingResult = 10018;
-		 public const ushort M2C_Stop = 10019;
-		 public const ushort C2G_Ping = 10020;
-		 public const ushort G2C_Ping = 10021;
-		 public const ushort G2C_Test = 10022;
-		 public const ushort C2M_Reload = 10023;
-		 public const ushort M2C_Reload = 10024;
-		 public const ushort C2R_Login = 10025;
-		 public const ushort R2C_Login = 10026;
-		 public const ushort C2G_LoginGate = 10027;
-		 public const ushort G2C_LoginGate = 10028;
-		 public const ushort G2C_TestHotfixMessage = 10029;
-		 public const ushort C2M_TestRobotCase = 10030;
-		 public const ushort M2C_TestRobotCase = 10031;
-		 public const ushort C2M_TransferMap = 10032;
-		 public const ushort M2C_TransferMap = 10033;
-		 public const ushort C2G_Benchmark = 10034;
-		 public const ushort G2C_Benchmark = 10035;
+		 public const ushort C2R_Login = 10004;
+		 public const ushort R2C_Login = 10005;
+		 public const ushort C2G_LoginGate = 10006;
+		 public const ushort G2C_LoginGate = 10007;
+		 public const ushort C2G_EnterGamePlay = 10008;
+		 public const ushort G2C_EnterGamePlay = 10009;
+		 public const ushort G2C_PlayerJoinRoomNotify = 10010;
+		 public const ushort G2C_GameStartNotify = 10011;
+		 public const ushort MoveInfo = 10012;
+		 public const ushort UnitInfo = 10013;
+		 public const ushort M2C_CreateUnits = 10014;
+		 public const ushort M2C_CreateMyUnit = 10015;
+		 public const ushort M2C_StartSceneChange = 10016;
+		 public const ushort M2C_RemoveUnits = 10017;
+		 public const ushort C2M_PathfindingResult = 10018;
+		 public const ushort C2M_Stop = 10019;
+		 public const ushort M2C_PathfindingResult = 10020;
+		 public const ushort M2C_Stop = 10021;
+		 public const ushort C2G_Ping = 10022;
+		 public const ushort G2C_Ping = 10023;
+		 public const ushort G2C_Test = 10024;
+		 public const ushort C2M_Reload = 10025;
+		 public const ushort M2C_Reload = 10026;
+		 public const ushort G2C_TestHotfixMessage = 10027;
+		 public const ushort C2M_TestRobotCase = 10028;
+		 public const ushort M2C_TestRobotCase = 10029;
+		 public const ushort C2M_TransferMap = 10030;
+		 public const ushort M2C_TransferMap = 10031;
+		 public const ushort C2G_Benchmark = 10032;
+		 public const ushort G2C_Benchmark = 10033;
 	}
 }

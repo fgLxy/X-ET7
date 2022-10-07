@@ -108,6 +108,15 @@ namespace ET
             AssetDatabase.SaveAssets();
         }
 
+        public static BuildTarget GetBuildTarget(PlatformType type) => type switch
+        {
+            PlatformType.PC => BuildTarget.StandaloneWindows64,
+            PlatformType.Android => BuildTarget.Android,
+            PlatformType.IOS => BuildTarget.iOS,
+            PlatformType.MacOS => BuildTarget.StandaloneOSX,
+            _ => throw new System.Exception(),
+        };
+
         public static void Build(PlatformType type, BuildAssetBundleOptions buildAssetBundleOptions, BuildOptions buildOptions, bool isBuildExe, bool isContainAB, bool clearFolder)
         {
             BuildTarget buildTarget = BuildTarget.StandaloneWindows;
@@ -139,17 +148,6 @@ namespace ET
             }
             Directory.CreateDirectory(fold);
 
-            UnityEngine.Debug.Log("start build assetbundle");
-            BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
-
-            UnityEngine.Debug.Log("finish build assetbundle");
-
-            if (isContainAB)
-            {
-                FileHelper.CleanDirectory("Assets/StreamingAssets/");
-                FileHelper.CopyDirectory(fold, "Assets/StreamingAssets/");
-            }
-
             if (isBuildExe)
             {
                 AssetDatabase.Refresh();
@@ -160,15 +158,49 @@ namespace ET
                 BuildPipeline.BuildPlayer(levels, $"{relativeDirPrefix}/{exeName}", buildTarget, buildOptions);
                 UnityEngine.Debug.Log("finish build exe");
             }
-            else
+
+
+            var aotsPath = HybridCLR.Editor.SettingsUtil.GetAssembliesPostIl2CppStripDir(buildTarget);
+            var aotBundlePath = "Assets/Bundles/AOTS";
+            if (Directory.Exists(aotBundlePath))
             {
-                if (isContainAB && type == PlatformType.PC)
-                {
-                    string targetPath = Path.Combine(relativeDirPrefix, $"{programName}_Data/StreamingAssets/");
-                    FileHelper.CleanDirectory(targetPath);
-                    Debug.Log($"src dir: {fold}    target: {targetPath}");
-                    FileHelper.CopyDirectory(fold, targetPath);
+                Directory.Delete(aotBundlePath, true);
+            }
+            Directory.CreateDirectory(aotBundlePath);
+            
+            foreach(var aotName in CodeLoader.AOTS)
+            {
+                var src = Path.Join(aotsPath, aotName);
+                if(!File.Exists(src))
+                    {
+                    Debug.LogError($"ab中添加AOT补充元数据dll:{src} 时发生错误,文件不存在。裁剪后的AOT dll在BuildPlayer时才能生成，因此需要你先构建一次游戏App后再打包。");
+                    continue;
                 }
+                var target = Path.Join(aotBundlePath, aotName + ".bytes");
+                File.Copy(src, target, true);
+            }
+
+            AssetDatabase.Refresh();
+            AssetImporter importer = AssetImporter.GetAtPath(aotBundlePath);
+            importer.assetBundleName = "code.aot";
+            AssetDatabase.Refresh();
+
+            UnityEngine.Debug.Log("start build assetbundle");
+            BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
+            UnityEngine.Debug.Log("finish build assetbundle");
+            
+            if (isContainAB)
+            {
+                FileHelper.CleanDirectory("Assets/StreamingAssets/");
+                FileHelper.CopyDirectory(fold, "Assets/StreamingAssets/");
+            }
+
+            if (!isBuildExe && isContainAB && type == PlatformType.PC)
+            {
+                string targetPath = Path.Combine(relativeDirPrefix, $"{programName}_Data/StreamingAssets/");
+                FileHelper.CleanDirectory(targetPath);
+                Debug.Log($"src dir: {fold}    target: {targetPath}");
+                FileHelper.CopyDirectory(fold, targetPath);
             }
         }
     }

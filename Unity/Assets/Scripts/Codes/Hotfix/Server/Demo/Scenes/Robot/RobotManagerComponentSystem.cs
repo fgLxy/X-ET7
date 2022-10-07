@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ET.Client;
 
 namespace ET.Server
 {
@@ -11,7 +12,10 @@ namespace ET.Server
             try
             {
                 clientScene = await Client.SceneFactory.CreateClientScene(zone, "Robot");
-                await Client.LoginHelper.Login(clientScene, zone.ToString(), zone.ToString());
+                var loginCom = self.AddComponent<LoginComponent>();
+                loginCom.Account = zone.ToString();
+                loginCom.Password = zone.ToString();
+                await loginCom.Login(clientScene);
                 await Client.EnterMapHelper.EnterMapAsync(clientScene);
                 Log.Debug($"create robot ok: {zone}");
                 return clientScene;

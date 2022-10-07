@@ -1,0 +1,11 @@
+{
+  "name": "mypublish",
+  "displayName": "FGUI代码生成",
+  "description": "",
+  "version": "1.0",
+  "author": {
+    "name": "liuxiaoyang"
+  },
+  "icon": "",
+  "main": "main.lua"
+}

@@ -736,24 +736,32 @@ namespace ET
             
             aInvokeHandler.Handle(args);
         }
-        
+
+        public T Invoke<A, T>(A args) where A : struct
+        {
+            return Invoke<A, T>(0, args);
+        }
+
+
         public T Invoke<A, T>(int type, A args) where A: struct
         {
+            UnityEngine.Debug.Log($"Before Invoke");
             if (!this.allInvokes.TryGetValue(typeof(A), out var invokeHandlers))
             {
                 throw new Exception($"Invoke error: {typeof(A).Name}");
             }
+            UnityEngine.Debug.Log($"Find Invoke Handler");
             if (!invokeHandlers.TryGetValue(type, out var invokeHandler))
             {
                 throw new Exception($"Invoke error: {typeof(A).Name} {type}");
             }
-
+            UnityEngine.Debug.Log($"Transform Invoke Handler");
             var aInvokeHandler = invokeHandler as AInvokeHandler<A, T>;
             if (aInvokeHandler == null)
             {
                 throw new Exception($"Invoke error, not AInvokeHandler: {typeof(T).Name} {type}");
             }
-            
+            UnityEngine.Debug.Log($"Do Invoke Handler:{aInvokeHandler.GetType()}");
             return aInvokeHandler.Handle(args);
         }
 

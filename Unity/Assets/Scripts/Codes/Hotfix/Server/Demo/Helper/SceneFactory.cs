@@ -28,6 +28,7 @@ namespace ET.Server
                 case SceneType.Gate:
                     scene.AddComponent<NetServerComponent, IPEndPoint>(startSceneConfig.InnerIPOutPort);
                     scene.AddComponent<PlayerComponent>();
+                    scene.AddComponent<RoomComponent>();
                     scene.AddComponent<GateSessionKeyComponent>();
                     break;
                 case SceneType.Map:

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using FUIEditor;
 using UnityEditor;
 using UnityEditor.Compilation;
 using UnityEngine;
@@ -107,7 +106,14 @@ namespace ET
 							break;
 					}
 				}
+				BuildModelAndHotfix();
+				HybridCLR.Editor.Commands.CompileDllCommand.AfterCompileCallback -= CopyHotfixDLL;
+				HybridCLR.Editor.Commands.CompileDllCommand.AfterCompileCallback += CopyHotfixDLL;
+
+				HybridCLR.Editor.Commands.PrebuildCommand.GenerateAll();
+
 				BuildHelper.Build(this.platformType, this.buildAssetBundleOptions, this.buildOptions, this.isBuildExe, this.isContainAB, this.clearFolder);
+				HybridCLR.Editor.Commands.CompileDllCommand.AfterCompileCallback -= CopyHotfixDLL;
 			}
 			
 			GUILayout.Label("");
@@ -117,16 +123,7 @@ namespace ET
 			
 			if (GUILayout.Button("BuildModelAndHotfix"))
 			{
-				if (Define.EnableCodes)
-				{
-					throw new Exception("now in ENABLE_CODES mode, do not need Build!");
-				}
-				BuildAssembliesHelper.BuildModel(this.codeOptimization, globalConfig);
-				BuildAssembliesHelper.BuildHotfix(this.codeOptimization, globalConfig);
-
-				AfterCompiling();
-				
-				ShowNotification("Build Model And Hotfix Success!");
+				BuildModelAndHotfix();
 			}
 			
 			if (GUILayout.Button("BuildModel"))
@@ -157,15 +154,13 @@ namespace ET
 			
 			if (GUILayout.Button("ExcelExporter"))
 			{
+				//Directory.Delete("Assets/Bundles/Config", true);
 				ToolsEditor.ExcelExporter();
 
-				const string clientProtoDir = "../Unity/Assets/Bundles/Config";
-				if (Directory.Exists(clientProtoDir))
-				{
-					Directory.Delete(clientProtoDir, true);
-				}
-				FileHelper.CopyDirectory("../Config/Excel/c", clientProtoDir);
-				
+				// 设置ab包
+				AssetImporter assetImporter = AssetImporter.GetAtPath($"Assets/Bundles/Config");
+				assetImporter.assetBundleName = "Config.unity3d";
+				AssetDatabase.SaveAssets();
 				AssetDatabase.Refresh();
 			}
 			
@@ -174,15 +169,36 @@ namespace ET
 				ToolsEditor.Proto2CS();
 			}
 			
-			if (GUILayout.Button("FUI代码生成"))
-			{
-				FUICodeSpawner.FUICodeSpawn();
-			}
 
 			GUILayout.Space(5);
 		}
-		
-		private static void AfterCompiling()
+
+        private void CopyHotfixDLL()
+        {
+			var hotfixPath = HybridCLR.Editor.SettingsUtil.GetHotFixDllsOutputDirByTarget(BuildHelper.GetBuildTarget(this.platformType));
+			File.Copy(Path.Join(BuildAssembliesHelper.CodeDir, "Hotfix.dll.bytes"), Path.Join(hotfixPath, "Hotfix.dll"), true);
+			File.Copy(Path.Join(BuildAssembliesHelper.CodeDir, "Model.dll.bytes"), Path.Join(hotfixPath, "Model.dll"), true);
+		}
+
+        private void BuildModelAndHotfix()
+        {
+			if (Define.EnableCodes)
+			{
+				throw new Exception("now in ENABLE_CODES mode, do not need Build!");
+			}
+			BuildAssembliesHelper.BuildModel(this.codeOptimization, globalConfig);
+			BuildAssembliesHelper.BuildHotfix(this.codeOptimization, globalConfig);
+
+			AfterCompiling();
+
+			ShowNotification("Build Model And Hotfix Success!");
+
+			var hotfixPath = HybridCLR.Editor.SettingsUtil.GetHotFixDllsOutputDirByTarget(BuildHelper.GetBuildTarget(this.platformType));
+			File.Copy(Path.Join(BuildAssembliesHelper.CodeDir, "Hotfix.dll.bytes"), Path.Join(hotfixPath, "Hotfix.dll"), true);
+			File.Copy(Path.Join(BuildAssembliesHelper.CodeDir, "Model.dll.bytes"), Path.Join(hotfixPath, "Model.dll"), true);
+		}
+
+        private static void AfterCompiling()
 		{
 			Directory.CreateDirectory(BuildAssembliesHelper.CodeDir);
 
