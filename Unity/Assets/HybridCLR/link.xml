@@ -13,6 +13,7 @@
     <type fullname="System.Action`3" preserve="all" />
     <type fullname="System.Activator" preserve="all" />
     <type fullname="System.ArgumentNullException" preserve="all" />
+    <type fullname="System.ArgumentOutOfRangeException" preserve="all" />
     <type fullname="System.Array" preserve="all" />
     <type fullname="System.AttributeTargets" preserve="all" />
     <type fullname="System.AttributeUsageAttribute" preserve="all" />
@@ -29,11 +30,8 @@
     <type fullname="System.Collections.Generic.List`1/Enumerator" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerBrowsableAttribute" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerBrowsableState" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerDisplayAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
-    <type fullname="System.Diagnostics.DebuggerStepThroughAttribute" preserve="all" />
     <type fullname="System.Enum" preserve="all" />
     <type fullname="System.Environment" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
@@ -44,6 +42,7 @@
     <type fullname="System.Int64" preserve="all" />
     <type fullname="System.IO.File" preserve="all" />
     <type fullname="System.Math" preserve="all" />
+    <type fullname="System.NotImplementedException" preserve="all" />
     <type fullname="System.Object" preserve="all" />
     <type fullname="System.ParamArrayAttribute" preserve="all" />
     <type fullname="System.Reflection.Assembly" preserve="all" />
@@ -83,7 +82,6 @@
     <type fullname="NLog.LogManager" preserve="all" />
   </assembly>
   <assembly fullname="System">
-    <type fullname="System.Collections.Generic.Queue`1" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2/ValueCollection" preserve="all" />
     <type fullname="System.Collections.Generic.SortedDictionary`2/ValueCollection/Enumerator" preserve="all" />
@@ -189,7 +187,11 @@
   </assembly>
   <assembly fullname="Unity.Mono">
     <type fullname="ET.CodeLoader" preserve="all" />
-    <type fullname="ET.YooAssetHelper" preserve="all" />
+    <type fullname="ET.CodeMode" preserve="all" />
+    <type fullname="ET.Define" preserve="all" />
+    <type fullname="ET.GlobalConfig" preserve="all" />
+    <type fullname="ET.Init" preserve="all" />
+    <type fullname="ET.ResComponent" preserve="all" />
     <type fullname="ReferenceCollector" preserve="all" />
   </assembly>
   <assembly fullname="Unity.ThirdParty">
@@ -228,20 +230,6 @@
     <type fullname="ProtoBuf.ProtoContractAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoIgnoreAttribute" preserve="all" />
     <type fullname="ProtoBuf.ProtoMemberAttribute" preserve="all" />
-    <type fullname="YooAsset.AssetOperationHandle" preserve="all" />
-    <type fullname="YooAsset.AsyncOperationBase" preserve="all" />
-    <type fullname="YooAsset.DownloaderOperation" preserve="all" />
-    <type fullname="YooAsset.DownloaderOperation/OnDownloadError" preserve="all" />
-    <type fullname="YooAsset.DownloaderOperation/OnDownloadProgress" preserve="all" />
-    <type fullname="YooAsset.EOperationStatus" preserve="all" />
-    <type fullname="YooAsset.OperationHandleBase" preserve="all" />
-    <type fullname="YooAsset.PatchDownloaderOperation" preserve="all" />
-    <type fullname="YooAsset.RawFileOperation" preserve="all" />
-    <type fullname="YooAsset.SceneOperationHandle" preserve="all" />
-    <type fullname="YooAsset.SubAssetsOperationHandle" preserve="all" />
-    <type fullname="YooAsset.UpdateManifestOperation" preserve="all" />
-    <type fullname="YooAsset.UpdateStaticVersionOperation" preserve="all" />
-    <type fullname="YooAsset.YooAssets" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.AnimationModule">
     <type fullname="UnityEngine.AnimationClip" preserve="all" />
@@ -261,6 +249,7 @@
     <type fullname="UnityEngine.Ray" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.LoadSceneMode" preserve="all" />
     <type fullname="UnityEngine.SceneManagement.Scene" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Texture" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Vector3" preserve="all" />

@@ -4290,7 +4290,7 @@ static void __M2N_i4i4i4i4i4u1(const MethodInfo* method, uint16_t* argVarIndexs,
 }
 
 
-// ET.ETTask`1<UnityEngine.SceneManagement.Scene> ET.Client.ResComponentSystem::LoadSceneAsync(ET.Client.ResComponent,System.String,System.Action`1<System.Single>,UnityEngine.SceneManagement.LoadSceneMode,System.Boolean,System.Int32)
+// System.Reflection.Emit.AssemblyBuilder System.AppDomain::DefineDynamicAssembly(System.Reflection.AssemblyName,System.Reflection.Emit.AssemblyBuilderAccess,System.String,System.Boolean,System.Collections.Generic.IEnumerable`1<System.Reflection.Emit.CustomAttributeBuilder>)
 static void __M2N_i4i4i4i4i4u1i4(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int32_t (*NativeMethod)(int32_t __arg0, int32_t __arg1, int32_t __arg2, int32_t __arg3, uint8_t __arg4, int32_t __arg5, const MethodInfo* method);
@@ -5490,7 +5490,7 @@ static void __M2N_i4i4r4i4(const MethodInfo* method, uint16_t* argVarIndexs, Sta
 }
 
 
-// System.IAsyncResult System.Action`1::BeginInvoke(T,System.AsyncCallback,System.Object)
+// System.Int32 System.Collections.Generic.List`1::IndexOf(T,System.Int32,System.Int32)
 static void __M2N_i4i4r4i4i4(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int32_t (*NativeMethod)(int32_t __arg0, float __arg1, int32_t __arg2, int32_t __arg3, const MethodInfo* method);
@@ -5570,7 +5570,7 @@ static void __M2N_i4i4r8r8(const MethodInfo* method, uint16_t* argVarIndexs, Sta
 }
 
 
-// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
+// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.Client.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
 static void __M2N_i4i4S1(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int32_t (*NativeMethod)(int32_t __arg0, ValueTypeSize<1> __arg1, const MethodInfo* method);
@@ -6114,7 +6114,7 @@ static void __M2N_i4i4S36i4i4(const MethodInfo* method, uint16_t* argVarIndexs, 
 }
 
 
-// System.Byte[] ET.GetOneConfigBytes::Handle(ET.ConfigComponent/GetOneConfigBytes)
+// System.Byte[] ET.Client.GetOneConfigBytes::Handle(ET.ConfigComponent/GetOneConfigBytes)
 static void __M2N_i4i4S4(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int32_t (*NativeMethod)(int32_t __arg0, ValueTypeSize<4> __arg1, const MethodInfo* method);
@@ -27362,7 +27362,7 @@ static void __M2N_vi8i8i4(const MethodInfo* method, uint16_t* argVarIndexs, Stac
 }
 
 
-// System.Void UnityEngine.Assertions.Assert::AreNotEqual<T>(T,T,System.String,System.Collections.Generic.IEqualityComparer`1<T>)
+// System.Void UnityEngine.Assertions.Assert::AreEqual<T>(T,T,System.String,System.Collections.Generic.IEqualityComparer`1<T>)
 static void __M2N_vi8i8i4i4(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef void (*NativeMethod)(int64_t __arg0, int64_t __arg1, int32_t __arg2, int32_t __arg3, const MethodInfo* method);
@@ -32896,7 +32896,7 @@ static int32_t __N2M_i4i4i2i4i4i4(int32_t __arg0, int16_t __arg1, int32_t __arg2
 }
 
 
-// ET.ETTask ET.Client.FsmCreateDownloader::OnEnter(ET.FsmComponent)
+// System.String Mono.Xml.SmallXmlParser/IAttrList::GetName(System.Int32)
 static int32_t __N2M_i4i4i4(int32_t __arg0, int32_t __arg1, const MethodInfo* method)
 {
     StackObject args[3] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1 };
@@ -33936,7 +33936,7 @@ static int32_t __N2M_i4i4r4i4(int32_t __arg0, float __arg1, int32_t __arg2, cons
 }
 
 
-// System.IAsyncResult System.Action`1::BeginInvoke(T,System.AsyncCallback,System.Object)
+// System.IAsyncResult System.Func`2::BeginInvoke(T,System.AsyncCallback,System.Object)
 static int32_t __N2M_i4i4r4i4i4(int32_t __arg0, float __arg1, int32_t __arg2, int32_t __arg3, const MethodInfo* method)
 {
     StackObject args[5] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1, *(uint64_t*)&__arg2, *(uint64_t*)&__arg3 };
@@ -34006,7 +34006,7 @@ static int32_t __N2M_i4i4r8r8(int32_t __arg0, double __arg1, double __arg2, cons
 }
 
 
-// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
+// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.Client.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
 static int32_t __N2M_i4i4S1(int32_t __arg0, ValueTypeSize<1> __arg1, const MethodInfo* method)
 {
     StackObject args[3] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1 };
@@ -34326,7 +34326,7 @@ static int32_t __N2M_i4i4S36(int32_t __arg0, ValueTypeSize<36> __arg1, const Met
 }
 
 
-// System.IAsyncResult System.Predicate`1::BeginInvoke(T,System.AsyncCallback,System.Object)
+// System.IAsyncResult System.Action`1::BeginInvoke(T,System.AsyncCallback,System.Object)
 static int32_t __N2M_i4i4S36i4i4(int32_t __arg0, ValueTypeSize<36> __arg1, int32_t __arg2, int32_t __arg3, const MethodInfo* method)
 {
     StackObject args[5] = {*(uint64_t*)&__arg0, (uint64_t)&__arg1, *(uint64_t*)&__arg2, *(uint64_t*)&__arg3 };
@@ -34336,7 +34336,7 @@ static int32_t __N2M_i4i4S36i4i4(int32_t __arg0, ValueTypeSize<36> __arg1, int32
 }
 
 
-// System.Byte[] ET.GetOneConfigBytes::Handle(ET.ConfigComponent/GetOneConfigBytes)
+// System.Byte[] ET.Client.GetOneConfigBytes::Handle(ET.ConfigComponent/GetOneConfigBytes)
 static int32_t __N2M_i4i4S4(int32_t __arg0, ValueTypeSize<4> __arg1, const MethodInfo* method)
 {
     StackObject args[3] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1 };

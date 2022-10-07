@@ -54,6 +54,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.SystemGenerator.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.LambdaJobs.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.netcode@0.51.1-preview.21\Runtime\Gen\GeneratorShared.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.JobEntity.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Sample.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.Common.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.entities@0.51.1-preview.21\Unity.Entities\SourceGenerators\Unity.Entities.SourceGen.AuthoringComponent.dll" />
+    <Analyzer Include="C:\Workspaces\Unity\X-ET7\Unity\Library\PackageCache\com.unity.netcode@0.51.1-preview.21\Runtime\Gen\Unity.NetCode.SourceGenerators.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Main\AOTGenericReferences.cs" />
@@ -359,6 +367,9 @@
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>Assets\Plugins\MongoDB\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.9f1c1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -800,6 +811,78 @@
     <ProjectReference Include="Unity.ThirdParty.Player.csproj">
       <Project>{10DF1046-9BC1-B99A-E23C-2644B8B0AB8A}</Project>
       <Name>Unity.ThirdParty.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Scenes.Player.csproj">
+      <Project>{A79D7963-6220-4968-8853-45E4C9CBA4A8}</Project>
+      <Name>Unity.Scenes.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Extensions.Hybrid.Player.csproj">
+      <Project>{D8A47942-DE03-A8AC-F108-8FCD3065F423}</Project>
+      <Name>Unity.Mathematics.Extensions.Hybrid.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Properties.UI.Player.csproj">
+      <Project>{978182C1-DA3E-9C74-20EC-6582235FE10E}</Project>
+      <Name>Unity.Properties.UI.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.HybridComponents.Player.csproj">
+      <Project>{92EBFA6A-0C40-A1B5-D73B-D51BC1F8AAA6}</Project>
+      <Name>Unity.Entities.Hybrid.HybridComponents.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Serialization.Player.csproj">
+      <Project>{28C64C29-E8D2-E097-6979-DB8C3B0A840E}</Project>
+      <Name>Unity.Serialization.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Jobs.Player.csproj">
+      <Project>{7C3EDF31-F57D-8E15-7DDF-7FC7B7DA549D}</Project>
+      <Name>Unity.Jobs.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Deformations.Player.csproj">
+      <Project>{62E7DA79-D332-589C-B98D-9BB836A7FC00}</Project>
+      <Name>Unity.Deformations.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Properties.Player.csproj">
+      <Project>{8D419A0F-BF5E-1A8A-5778-D362FB6FC35E}</Project>
+      <Name>Unity.Properties.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.Player.csproj">
+      <Project>{FE079343-B0ED-46CA-B09B-EF3CC9EBEFF7}</Project>
+      <Name>Unity.Collections.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Profiling.Core.Player.csproj">
+      <Project>{4B92F72B-FC71-F28D-6814-85FD2F735E3A}</Project>
+      <Name>Unity.Profiling.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Hybrid.Player.csproj">
+      <Project>{C63622F7-14CE-10C8-9AD2-006DA53E3A62}</Project>
+      <Name>Unity.Entities.Hybrid.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Transforms.Hybrid.Player.csproj">
+      <Project>{2166930F-289E-85B5-E894-3EB45B2F4C37}</Project>
+      <Name>Unity.Transforms.Hybrid.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Extensions.Player.csproj">
+      <Project>{E354CE61-0CB4-EE5C-0B4D-5F92A9131257}</Project>
+      <Name>Unity.Mathematics.Extensions.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Transforms.Player.csproj">
+      <Project>{433FC075-BE54-312C-ECA9-882264C366D5}</Project>
+      <Name>Unity.Transforms.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Entities.Player.csproj">
+      <Project>{C0933F40-5A00-BE85-6B0E-97F1C01CDFB5}</Project>
+      <Name>Unity.Entities.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.NetCode.Authoring.Hybrid.Player.csproj">
+      <Project>{B8E50483-4741-DFEE-B9A9-E9FD0C0C4F63}</Project>
+      <Name>Unity.NetCode.Authoring.Hybrid.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.NetCode.Player.csproj">
+      <Project>{D9D111DB-3AA5-4CE6-517C-E273886A76ED}</Project>
+      <Name>Unity.NetCode.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Networking.Transport.Player.csproj">
+      <Project>{95F6FD8F-5391-F46F-C925-B4F095E538B7}</Project>
+      <Name>Unity.Networking.Transport.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

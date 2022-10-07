@@ -181,9 +181,6 @@ namespace ET
             }
 
             AssetDatabase.Refresh();
-            AssetImporter importer = AssetImporter.GetAtPath(aotBundlePath);
-            importer.assetBundleName = "code.aot";
-            AssetDatabase.Refresh();
 
             UnityEngine.Debug.Log("start build assetbundle");
             BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);

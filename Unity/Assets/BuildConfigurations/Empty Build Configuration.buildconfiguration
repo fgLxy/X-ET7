@@ -1,0 +1,31 @@
+{
+    "Show": true,
+    "Dependencies": [],
+    "Components": [
+        {
+            "$type": "ETBuild, Unity.Editor",
+            "RunMode": 1,
+            "Mode": 0,
+            "EnableAddressable": false,
+            "MainPackageBuildTags": "",
+            "CompressOption": 2,
+            "OutputNameStyle": 1,
+            "ResourceVersion": 1,
+            "Optimization": 2,
+            "AssetBundleOutputPath": "",
+            "Configuration": 3,
+            "Platform": "StandaloneWindows64"
+        },
+        {
+            "$type": "Unity.Build.Common.SceneList, Unity.Build",
+            "$version": 1,
+            "BuildCurrentScene": false,
+            "SceneInfos": [
+                {
+                    "Scene": "GlobalObjectId_V1-1-e0d691ac8c1d0454ba07089ea820e18a-102900000-0",
+                    "AutoLoad": false
+                }
+            ]
+        }
+    ]
+}

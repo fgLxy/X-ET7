@@ -5482,7 +5482,7 @@ static void __M2N_i8i8i8i8i4u1(const MethodInfo* method, uint16_t* argVarIndexs,
 }
 
 
-// ET.ETTask`1<UnityEngine.SceneManagement.Scene> ET.Client.ResComponentSystem::LoadSceneAsync(ET.Client.ResComponent,System.String,System.Action`1<System.Single>,UnityEngine.SceneManagement.LoadSceneMode,System.Boolean,System.Int32)
+// ET.ETTask`1<UnityEngine.SceneManagement.Scene> ET.ResComponent::LoadSceneAsync(System.String,System.Action`1<System.Single>,UnityEngine.SceneManagement.LoadSceneMode,System.Boolean,System.Int32)
 static void __M2N_i8i8i8i8i4u1i4(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int64_t (*NativeMethod)(int64_t __arg0, int64_t __arg1, int64_t __arg2, int32_t __arg3, uint8_t __arg4, int32_t __arg5, const MethodInfo* method);
@@ -6402,7 +6402,7 @@ static void __M2N_i8i8r4i8(const MethodInfo* method, uint16_t* argVarIndexs, Sta
 }
 
 
-// System.IAsyncResult System.Action`1::BeginInvoke(T,System.AsyncCallback,System.Object)
+// System.IAsyncResult System.Func`2::BeginInvoke(T,System.AsyncCallback,System.Object)
 static void __M2N_i8i8r4i8i8(const MethodInfo* method, uint16_t* argVarIndexs, StackObject* localVarBase, void* ret)
 {
     typedef int64_t (*NativeMethod)(int64_t __arg0, float __arg1, int64_t __arg2, int64_t __arg3, const MethodInfo* method);
@@ -31965,7 +31965,7 @@ static int64_t __N2M_i8i8i4vf4i8i4i8i8(int64_t __arg0, int32_t __arg1, HtVector4
 }
 
 
-// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
+// System.Collections.Generic.Dictionary`2<System.String,System.Byte[]> ET.Client.GetAllConfigBytes::Handle(ET.ConfigComponent/GetAllConfigBytes)
 static int64_t __N2M_i8i8i8(int64_t __arg0, int64_t __arg1, const MethodInfo* method)
 {
     StackObject args[3] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1 };
@@ -32985,7 +32985,7 @@ static int64_t __N2M_i8i8r4i8(int64_t __arg0, float __arg1, int64_t __arg2, cons
 }
 
 
-// System.IAsyncResult System.Action`1::BeginInvoke(T,System.AsyncCallback,System.Object)
+// System.IAsyncResult System.Func`2::BeginInvoke(T,System.AsyncCallback,System.Object)
 static int64_t __N2M_i8i8r4i8i8(int64_t __arg0, float __arg1, int64_t __arg2, int64_t __arg3, const MethodInfo* method)
 {
     StackObject args[5] = {*(uint64_t*)&__arg0, *(uint64_t*)&__arg1, *(uint64_t*)&__arg2, *(uint64_t*)&__arg3 };

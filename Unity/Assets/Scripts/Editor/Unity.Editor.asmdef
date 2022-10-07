@@ -8,7 +8,11 @@
         "Unity.ScriptableBuildPipeline",
         "Unity.ScriptableBuildPipeline.Editor",
         "YooAsset.Editor",
-        "HybridCLR.Editor"
+        "HybridCLR.Editor",
+        "Unity.Build",
+        "Unity.Build.Classic.Private",
+        "Unity.Properties",
+        "Unity.Build.Classic"
     ],
     "includePlatforms": [
         "Editor"
